@@ -55,7 +55,7 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 ```
 
 
-## when you create ENV file do the command in cmd in the project file:
+when you create ENV file do the command in cmd in the project file:
 ```
 php artisan migrate
 ```
