@@ -10,7 +10,11 @@ After cloning, Run composer install in Command-line interface:
 composer install
 ```
 
-Create ENV file, here is the ENV example, change DB name, user, password etc for your environment.
+Create ENV file, here is the ENV example, change DB name, user, password etc for your environment. You can change .env.example to.env, after that you need to generate key:
+```
+php artisan key:generate
+```
+ENV example:
 ```
 APP_NAME=Laravel
 APP_ENV=local
