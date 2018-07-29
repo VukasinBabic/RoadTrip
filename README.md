@@ -1,17 +1,25 @@
 # RoadTrip
 
 ## Instalation
-Git clone this project
-
+Git clone this project and run command in Command-line interface in the project folder.
 ```
 git clone https://github.com/VukasinBabic/RoadTrip.git
 ```
-
+After cloning, Run composer install in Command-line interface:
 ```
 composer install
 ```
 
-Create ENV file
+Create ENV file, here is the ENV example, change DB name, user, password etc for your environment. You can change in cmd .env.example to.env:
+```
+cp .env.example .env 
+copy .env.example .env
+```
+after that you need to generate key:
+```
+php artisan key:generate
+```
+ENV example:
 ```
 APP_NAME=Laravel
 APP_ENV=local
@@ -55,7 +63,8 @@ MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 ```
 
 
-when you create ENV file do the command in cmd in the project file:
+when you create ENV file,  in Command-line interface run:
 ```
 php artisan migrate
 ```
+After that the project should be set and working. 
