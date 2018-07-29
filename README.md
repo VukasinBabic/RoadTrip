@@ -10,7 +10,12 @@ After cloning, Run composer install in Command-line interface:
 composer install
 ```
 
-Create ENV file, here is the ENV example, change DB name, user, password etc for your environment. You can change .env.example to.env, after that you need to generate key:
+Create ENV file, here is the ENV example, change DB name, user, password etc for your environment. You can change in cmd .env.example to.env:
+```
+cp .env.example .env 
+copy .env.example .env
+```
+after that you need to generate key:
 ```
 php artisan key:generate
 ```
