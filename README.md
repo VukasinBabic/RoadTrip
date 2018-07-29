@@ -1,7 +1,7 @@
 # RoadTrip
 
 ## Instalation
-Git clone this project and run command in Command-line interface
+Git clone this project and run command in Command-line interface in the project folder.
 ```
 git clone https://github.com/VukasinBabic/RoadTrip.git
 ```
