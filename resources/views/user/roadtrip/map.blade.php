@@ -1,33 +1,30 @@
-<!DOCTYPE html>
-<html lang="en"> 
-<head>
-<meta charset="utf-16"/>
-	<!--<script src="{{ asset('loadgpx.4.js') }}" type="text/javascript"></script>	-->
-	<script type="text/javascript"
-    src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js">
+@extends('layouts.head')
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js">
 	</script>
-	<style>
-       /* Set the size of the div element that contains the map */
-      #map {
-        height: 800px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
-       }
-    </style>
+<style>
+/* Set the size of the div element that contains the map */
+#map {
+	height: 500px; /* The height is 400 pixels */
+	width: 80%; /* The width is the width of the web page */
+}
+</style>
 </head>
 <body>
 
-<script>
+	@include('layouts.nav') @if(!empty($message))
+	<div class="alert alert-success">{{ $message }}</div>
+	@endif
 
-//var path = "{!! url($path) !!}";
-
-
-    </script>
-
-
-       <h3>My Google Maps Demo</h3>
-    <!--The div element for the map -->
-    <div id="map"></div>
-    <script>
+	<a href="{{ route('roadtrips') }}" class="btn btn-xs btn-info">
+            					
+    	<span class="glyphicon glyphicon-pencil">Road trip list</span>
+            					
+    </a>
+	<h3>My Google Maps Demo</h3>
+	<!--The div element for the map -->
+	<div id="map"></div>
+	<script>
       
     function initialize() {
           var route1Latlng = new google.maps.LatLng(44,20);
@@ -73,20 +70,17 @@
                    
           });
      }
-    
-    
-
-     
+        
 </script>
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_yrDAFYTGI6LYchUWsXEFsg1sTLw2Sh4&libraries=geometry,places,visualization,drawing"
-    ></script>
-    
-    <script type="text/javascript">
+	<script type="text/javascript"
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_yrDAFYTGI6LYchUWsXEFsg1sTLw2Sh4&libraries=geometry,places,visualization,drawing"></script>
+
+	<script type="text/javascript">
 
     google.maps.event.addDomListener(window, 'load', initialize);</script>
 </body>
-</html>	
+</html>
 
 
 

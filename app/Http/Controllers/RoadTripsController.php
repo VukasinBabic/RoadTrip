@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Connection;
 
 use App\Roadtrip;
 
@@ -66,7 +68,15 @@ class RoadTripsController extends Controller
             
         ]);
         
-        return redirect()->back()->with('message', 'Successfully Created');
+        $id = DB::getPdo()->lastInsertId();
+        
+        $path = Roadtrip::find($id)->file;
+        
+        $message = 'Road trip successfully Created';
+        
+        return view('user.roadtrip.map', compact('path','message'));
+        
+        //return view('user.roadtrip.map')->with('path',$path);
         
      
     }
