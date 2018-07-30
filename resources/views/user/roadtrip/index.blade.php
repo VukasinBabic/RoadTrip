@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div align="center">
-	<div class="card card col-md-8" >
+<div align="center" class="no-gutters">
+	<div class="card card col-md-5" >
 	
 		<div class="card">
 		
-        	<table class="table table-hover">
+        	<table class="table table-hover mb-0">
         		
         		<thead>
         		
@@ -20,19 +20,19 @@
             	
             		@foreach($roadtrips as $roadtrip)
             		
-            			<tr>
+            			<tr >
             			
-            				<td>
+            				<td class="col-md-6" style="background-color: #bfbfbf">
             					
-            					{{ $roadtrip->name }}
+            					<p class="font-weight-bold">{{ $roadtrip->name }}</p>
             					
             				</td>
             				
-            				<td>
+            				<td align="center" class="col-md-2">
             				
-            					<a href="{{ route('roadtrip.map',$roadtrip->id) }}" class="btn btn-xs btn-info">
+            					<a href="{{ route('roadtrip.map',$roadtrip->id) }}" class="btn btn-xs">
             					
-            						<span class="glyphicon glyphicon-pencil">Click for the Map</span>
+            						<span class="glyphicon glyphicon-pencil font-weight-bold"  style="color:#595959">Click for the Map</span>
             					
             					</a>
             				

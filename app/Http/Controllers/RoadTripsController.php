@@ -72,9 +72,11 @@ class RoadTripsController extends Controller
         
         $path = Roadtrip::find($id)->file;
         
+        $name = Roadtrip::find($id)->name;
+        
         $message = 'Road trip successfully Created';
         
-        return view('user.roadtrip.map', compact('path','message'));
+        return view('user.roadtrip.map', compact('path','message', 'name'));
         
         //return view('user.roadtrip.map')->with('path',$path);
         
@@ -91,7 +93,9 @@ class RoadTripsController extends Controller
     {
         $path = Roadtrip::find($id)->file;
         
-        return view('user.roadtrip.map', compact('path'));
+        $name = Roadtrip::find($id)->name;
+        
+        return view('user.roadtrip.map', compact('path','name'));
     }
 
     /**
