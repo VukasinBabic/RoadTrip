@@ -40,7 +40,6 @@
                    dataType: "xml",
                    success: function (xml) {
     
-                       	console.log(xml)
                         var points = [];
                         var bounds = new google.maps.LatLngBounds();
     

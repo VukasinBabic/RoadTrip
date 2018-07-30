@@ -19,15 +19,15 @@ Auth::routes();
 
 Route::group(['prefix' => 'user', 'middleware' => 'auth'], function(){
        
-    Route::get('/roadtrip/create','RoadtripsController@create')->name('roadtrip.create');
+    Route::get('/roadtrip/create','RoadTripsController@create')->name('roadtrip.create');
     
-    Route::post('/roadtrip/store','RoadtripsController@store')->name('roadtrip.store');
+    Route::post('/roadtrip/store','RoadTripsController@store')->name('roadtrip.store');
      
 });
 
-Route::get('/roadtrips','RoadtripsController@index')->name('roadtrips');
+Route::get('/roadtrips','RoadTripsController@index')->name('roadtrips');
     
-Route::get('/roadtrip/{id}','RoadtripsController@show')->name('roadtrip.map');
+Route::get('/roadtrip/{id}','RoadTripsController@show')->name('roadtrip.map');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
