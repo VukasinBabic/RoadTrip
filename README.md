@@ -3,68 +3,45 @@
 ## Instalation
 Git clone this project and run command in Command-line interface in the project folder.
 ```
-git clone https://github.com/VukasinBabic/RoadTrip.git
+https://github.com/VukasinBabic/twitterApp.git
 ```
 After cloning, Run composer install in Command-line interface:
 ```
-composer install
+composer update
 ```
 
-Create ENV file, here is the ENV example, change DB name, user, password etc for your environment. You can change in cmd .env.example to.env:
-```
-cp .env.example .env 
-copy .env.example .env
-```
-after that you need to generate key:
-```
-php artisan key:generate
-```
+EDIT ENV file, here is the ENV example, change DB name, user, password etc for your environment. 
+
 ENV example:
+
+###> symfony/framework-bundle ###
+APP_ENV=dev
+APP_SECRET=e9872bb4900aed501378a147f4247bee
+#TRUSTED_PROXIES=127.0.0.1,127.0.0.2
+#TRUSTED_HOSTS='^localhost|example\.com$'
+###< symfony/framework-bundle ###
+
+###> doctrine/doctrine-bundle ###
+# Format described at http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html#connecting-using-a-url
+# For an SQLite database, use: "sqlite:///%kernel.project_dir%/var/data.db"
+# Configure your db driver and server_version in config/packages/doctrine.yaml
+DATABASE_URL=mysql://root:''@127.0.0.1:3306/twitter-test
+###< doctrine/doctrine-bundle ###
+
+when you create ENV file, run:
 ```
-APP_NAME=Laravel
-APP_ENV=local
-APP_KEY=
-APP_DEBUG=true
-APP_URL=http://localhost
-
-LOG_CHANNEL=stack
-
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=homestead
-DB_USERNAME=homestead
-DB_PASSWORD=secret
-
-BROADCAST_DRIVER=log
-CACHE_DRIVER=file
-SESSION_DRIVER=file
-SESSION_LIFETIME=120
-QUEUE_DRIVER=sync
-
-REDIS_HOST=127.0.0.1
-REDIS_PASSWORD=null
-REDIS_PORT=6379
-
-MAIL_DRIVER=smtp
-MAIL_HOST=smtp.mailtrap.io
-MAIL_PORT=2525
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_ENCRYPTION=null
-
-PUSHER_APP_ID=
-PUSHER_APP_KEY=
-PUSHER_APP_SECRET=
-PUSHER_APP_CLUSTER=mt1
-
-MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
-MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
+php bin/console doctrine:database:create
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
 ```
-
-
-when you create ENV file,  in Command-line interface run:
+After that import Database Records, from DB table,
+You can skip this part, but You need to manually set admin user in the Db:
 ```
-php artisan migrate
+ROLES: "ROLE_ADMIN"
+```
+If you import the database admin user is:
+```
+email: admin@admin.com
+password: adminadmin
 ```
 After that the project should be set and working. 
